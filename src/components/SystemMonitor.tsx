@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -7,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { 
   Cpu, 
   HardDrive, 
-  Memory, 
+  MemoryStick, 
   Clock, 
   Network, 
   ArrowUpDown,
@@ -16,7 +15,6 @@ import {
 import { cn } from '@/lib/utils';
 import useSystemStats, { formatBytes, formatUptime } from '@/hooks/useSystemStats';
 
-// Circular progress component for CPU, RAM, and Disk usage
 const CircularProgress = ({ 
   value, 
   size = 120, 
@@ -36,7 +34,6 @@ const CircularProgress = ({
   const circumference = radius * 2 * Math.PI;
   const offset = circumference - (value / 100) * circumference;
   
-  // Determine color based on value
   const getColor = () => {
     if (value < 60) return 'stroke-sky-500 dark:stroke-sky-400';
     if (value < 80) return 'stroke-amber-500 dark:stroke-amber-400';
@@ -79,7 +76,6 @@ const CircularProgress = ({
   );
 };
 
-// Network traffic card
 const NetworkTrafficCard = ({ 
   upload, 
   download 
@@ -87,7 +83,6 @@ const NetworkTrafficCard = ({
   upload: number, 
   download: number 
 }) => {
-  // Helper for speed conversion
   const formatSpeed = (speed: number) => {
     if (speed < 1000) return `${speed.toFixed(0)} KB/s`;
     return `${(speed / 1000).toFixed(1)} MB/s`;
@@ -141,7 +136,6 @@ const NetworkTrafficCard = ({
   );
 };
 
-// System info card
 const SystemInfoCard = ({ 
   model, 
   uptime 
@@ -174,7 +168,6 @@ const SystemInfoCard = ({
   );
 };
 
-// Main System Monitor component
 export const SystemMonitor = () => {
   const { stats, loading, error } = useSystemStats();
   
@@ -236,7 +229,7 @@ export const SystemMonitor = () => {
                   value={stats.memory.percentage}
                   label="Memory Usage"
                   sublabel={`${stats.memory.used} GB / ${stats.memory.total} GB`}
-                  icon={Memory}
+                  icon={MemoryStick}
                 />
               </CardContent>
             </Card>
