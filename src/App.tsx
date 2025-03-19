@@ -22,6 +22,7 @@ const App = () => (
             <Route path="/videos" element={<Index />} />
             <Route path="/server" element={<Index />} />
             <Route path="/settings" element={<Index />} />
+            <Route path="/multistream" element={<Index />} />
             <Route path="/logs" element={<Index />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

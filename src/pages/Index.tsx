@@ -5,6 +5,7 @@ import StreamingStatus from '@/components/StreamingStatus';
 import SystemMonitor from '@/components/SystemMonitor';
 import VideoManagement from '@/components/VideoManagement';
 import StreamSettings from '@/components/StreamSettings';
+import { MultiStreamSetup } from '@/components/MultiStreamSetup';
 import { 
   ArrowLeftFromLine, 
   ArrowRightFromLine,
@@ -54,6 +55,8 @@ const Index = () => {
         return <SystemMonitor />;
       case 'settings':
         return <StreamSettings />;
+      case 'multistream':
+        return <MultiStreamSetup />;
       default:
         return <Dashboard />;
     }
