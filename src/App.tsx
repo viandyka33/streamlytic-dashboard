@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import DeploymentGuide from "./pages/DeploymentGuide";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/settings" element={<Index />} />
             <Route path="/multistream" element={<Index />} />
             <Route path="/logs" element={<Index />} />
+            <Route path="/deployment" element={<DeploymentGuide />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

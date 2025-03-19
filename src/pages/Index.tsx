@@ -9,11 +9,13 @@ import { MultiStreamSetup } from '@/components/MultiStreamSetup';
 import { 
   ArrowLeftFromLine, 
   ArrowRightFromLine,
-  Menu
+  Menu,
+  Info
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 // Simple dashboard component
 const Dashboard = () => {
@@ -24,6 +26,12 @@ const Dashboard = () => {
         <p className="text-muted-foreground">
           Monitor your streaming status and system performance.
         </p>
+        <div className="flex items-center mt-2">
+          <Info className="h-4 w-4 mr-2 text-blue-500" />
+          <Link to="/deployment" className="text-blue-500 hover:underline">
+            View deployment guide
+          </Link>
+        </div>
       </div>
       
       <StreamingStatus />
